@@ -1,0 +1,6 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+Sitemap: https://standout4mentalhealth.org/mindbridge-100for100/sitemap.xml
+

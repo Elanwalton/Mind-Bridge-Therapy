@@ -1,0 +1,17 @@
+{
+  "name": "mindbridge-campaign",
+  "version": "1.0.0",
+  "description": "MindBridge Therapy & Rehabilitation Centre - #100for100 Campaign Platform",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.9"
+  },
+  "engines": {
+    "node": ">=18.x"
+  }
+}
+
