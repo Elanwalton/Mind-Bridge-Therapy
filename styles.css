@@ -170,6 +170,13 @@ button {
 }
 .announcement-link:hover { text-decoration: underline; }
 
+.pulse-label-full { display: inline; }
+.pulse-label-short { display: none; }
+.announcement-text-desk { display: inline; }
+.announcement-text-mobile { display: none; }
+.nav-donate-text-full { display: inline; }
+.nav-donate-text-short { display: none; }
+
 /* --------------------------------------------------------------------------
    Site Header & Desktop Navigation
    -------------------------------------------------------------------------- */
@@ -2693,11 +2700,249 @@ button {
 }
 
 @media (max-width: 768px) {
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* ── Ultra-Slim Announcement Bar (Height reduced by ~85% on mobile) ── */
+  .announcement-bar {
+    padding: 0.18rem 0 !important;
+    font-size: 0.68rem !important;
+    line-height: 1.15 !important;
+    min-height: unset !important;
+  }
+  .announcement-content {
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    padding: 0 0.4rem !important;
+  }
+  .pulse-tag {
+    font-size: 0.58rem !important;
+    padding: 0.08rem 0.35rem !important;
+    letter-spacing: 0.02em !important;
+    flex-shrink: 0 !important;
+  }
+  .pulse-dot {
+    width: 5px !important;
+    height: 5px !important;
+  }
+  .pulse-label-full { display: none !important; }
+  .pulse-label-short { display: inline !important; }
+  .announcement-text-desk { display: none !important; }
+  .announcement-text-mobile { display: inline !important; }
+  .announcement-text {
+    font-size: 0.68rem !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .announcement-link {
+    font-size: 0.68rem !important;
+    flex-shrink: 0 !important;
+    font-weight: 700 !important;
+  }
+
+  /* ── Top Navigation Bar on Mobile (No crushing to the right) ── */
+  .site-header {
+    height: 56px !important;
+  }
+  .nav-wrapper {
+    gap: 0.4rem !important;
+    width: 100% !important;
+    overflow: hidden !important;
+  }
+  .brand-logo {
+    gap: 0.45rem !important;
+    min-width: 0 !important;
+    flex-shrink: 1 !important;
+    overflow: hidden !important;
+  }
+  .logo-mark {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 6px !important;
+    flex-shrink: 0 !important;
+  }
+  .brand-svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .brand-text {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  .brand-title {
+    font-size: 0.95rem !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+  }
+  /* Very tiny Stand Out 4 Mental Health subtitle as requested */
+  .brand-sub {
+    font-size: 0.48rem !important;
+    letter-spacing: 0.03em !important;
+    line-height: 1 !important;
+    color: var(--text-dim) !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    margin-top: 1px !important;
+  }
+
   .desktop-nav { display: none !important; }
-  .nav-share-btn { display: none; }
-  .mobile-toggle { display: flex; }
-  .mobile-drawer.open { display: block; }
-  
+  .nav-share-btn { display: none !important; }
+
+  .header-actions {
+    gap: 0.35rem !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+  }
+  .nav-donate-btn {
+    padding: 0.34rem 0.65rem !important;
+    font-size: 0.74rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0 !important;
+  }
+  .nav-donate-btn .btn-arrow {
+    display: none !important;
+  }
+  .nav-donate-text-full { display: none !important; }
+  .nav-donate-text-short { display: inline !important; }
+
+  .mobile-toggle {
+    display: flex !important;
+    width: 34px !important;
+    height: 34px !important;
+    padding: 6px !important;
+    flex-shrink: 0 !important;
+  }
+  .mobile-drawer.open { display: block !important; }
+
+  /* ── Section 5: Interactive Tools Balanced Margins ── */
+  #calculator {
+    overflow: hidden !important;
+  }
+  #calculator .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .calculator-wrapper {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    padding: 1.25rem 1rem !important;
+    border-radius: var(--radius-md) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+  .calc-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .slider-control-group {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .slider-label {
+    width: 100% !important;
+    font-size: 0.85rem !important;
+  }
+  .slider-display {
+    font-size: 1.35rem !important;
+  }
+  .custom-slider {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 1rem 0 !important;
+  }
+  .quick-preset-chips {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.35rem !important;
+    margin-bottom: 1.25rem !important;
+    box-sizing: border-box !important;
+  }
+  .preset-chip {
+    font-size: 0.72rem !important;
+    padding: 0.35rem 0.55rem !important;
+    box-sizing: border-box !important;
+  }
+  .calc-cta-group {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .calc-cta-group .btn,
+  #calcDonateBtn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.75rem 1rem !important;
+    font-size: 0.95rem !important;
+    display: flex !important;
+    justify-content: center !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+  .calc-result-card {
+    padding: 1.25rem 1rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+  }
+  .result-header {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .result-body {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .result-headline {
+    font-size: 1.15rem !important;
+  }
+  .result-text {
+    font-size: 0.85rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+  .impact-metrics-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 0.35rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding-top: 1rem !important;
+    margin-bottom: 1rem !important;
+  }
+  .i-metric {
+    min-width: 0 !important;
+    padding: 0.2rem !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+  .i-metric .i-val {
+    font-size: 1.2rem !important;
+  }
+  .i-metric .i-lbl {
+    font-size: 0.65rem !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+  .result-footer {
+    font-size: 0.72rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* ── Remaining Layout Responsive Rules ── */
   .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .hero-headline { font-size: 2.2rem; }
   
