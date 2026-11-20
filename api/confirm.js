@@ -1,6 +1,6 @@
 // api/confirm.js
 // Vercel Serverless Function — handles M-PESA donation confirmation submissions.
-// Sends a receipt email to the donor and a champion notification to SO4MH team.
+// Sends a confirmation email to the donor and a champion notification to SO4MH team.
 
 const nodemailer = require('nodemailer');
 
@@ -55,15 +55,15 @@ module.exports = async function handler(req, res) {
   try {
     const transporter = createTransport();
 
-    // ── 1. Official receipt to donor ──────────────────────────────────────
+    // ── 1. Official confirmation to donor ──────────────────────────────────────
     await transporter.sendMail({
       from: `"${campaignName}" <${process.env.SMTP_USER}>`,
       to: email,
-      subject: `🏆 Hongera ${donorName.split(' ')[0]}! You're a #100for100 Champion — Official Receipt`,
+      subject: `🏆 Hongera ${donorName.split(' ')[0]}! You're a #100for100 Champion — Donation Confirmation`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0d0e12; color: #e5e7eb; padding: 24px; border-radius: 8px;">
           <div style="background: #10B981; color: #000; padding: 8px 16px; border-radius: 4px; display: inline-block; font-weight: bold; font-size: 12px; letter-spacing: 1px; margin-bottom: 20px;">
-            OFFICIAL DONATION RECEIPT
+            OFFICIAL DONATION CONFIRMATION
           </div>
 
           <h2 style="color: #ffffff; margin-top: 0;">Hongera, ${donorName}! 🌟</h2>
@@ -71,9 +71,9 @@ module.exports = async function handler(req, res) {
             You are now officially a <strong style="color: #F59E0B;">#100for100 Champion</strong>. Your contribution goes directly into equipping the MindBridge Therapy & Rehabilitation Centre for children with neurodevelopmental disabilities in Nairobi.
           </p>
 
-          <!-- Receipt Box -->
+          <!-- Confirmation Box -->
           <div style="background: #1f2937; border: 1px solid #374151; border-radius: 8px; padding: 20px; margin: 24px 0;">
-            <h3 style="color: #F59E0B; margin-top: 0; font-size: 14px; letter-spacing: 1px; text-transform: uppercase;">Donation Receipt</h3>
+            <h3 style="color: #F59E0B; margin-top: 0; font-size: 14px; letter-spacing: 1px; text-transform: uppercase;">Donation Confirmation</h3>
             <table style="width: 100%; border-collapse: collapse;">
               <tr style="border-bottom: 1px solid #374151;">
                 <td style="padding: 10px 0; color: #9ca3af; font-size: 14px;">Donor Name</td>
@@ -119,7 +119,7 @@ module.exports = async function handler(req, res) {
               Embakasi East / Mukuru, Nairobi · Phone: +254 780 796 146<br>
               <a href="mailto:info@standout4mentalhealth.org" style="color: #F59E0B;">info@standout4mentalhealth.org</a> ·
               <a href="https://standout4mentalhealth.org" style="color: #F59E0B;">standout4mentalhealth.org</a><br><br>
-              This is an auto-generated receipt. Please keep it for your records.
+              This is an auto-generated confirmation. Please keep it for your records.
             </p>
           </div>
         </div>
@@ -172,7 +172,7 @@ module.exports = async function handler(req, res) {
 
     return res.status(200).json({
       success: true,
-      message: `Champion registered! Receipt sent to ${email}.`,
+      message: `Champion registered! Confirmation sent to ${email}.`,
       champion: {
         name: donorName,
         amount: parsedAmount,
@@ -184,7 +184,7 @@ module.exports = async function handler(req, res) {
     console.error('[confirm] Email error:', err);
     return res.status(500).json({
       success: false,
-      message: 'Failed to send receipt. Please contact info@standout4mentalhealth.org with your transaction reference.',
+      message: 'Failed to send confirmation. Please contact info@standout4mentalhealth.org with your transaction reference.',
       error: process.env.NODE_ENV === 'development' ? err.message : undefined,
     });
   }

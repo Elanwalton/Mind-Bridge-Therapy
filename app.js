@@ -434,7 +434,7 @@ window.openPledgeModal = function(itemName, unitPrice) {
 window.openConfirmModal = function(channelName) {
   const desc = document.getElementById('confirmModalDesc');
   if (desc) {
-    desc.textContent = `Please enter your ${channelName} transaction code and email so we can verify and issue your official receipt.`;
+    desc.textContent = `Please enter your ${channelName} transaction code and email so our team can verify and confirm your contribution.`;
   }
   openModal('confirmModal');
 };
@@ -502,7 +502,7 @@ window.handleConfirmSubmit = async function(e) {
 
     if (res.ok && data.success) {
       closeModal('confirmModal');
-      showToast(`Hongera ${donorName}! Your gift of KES ${amount.toLocaleString()} (Ref: ${ref.toUpperCase()}) is confirmed. An official receipt has been sent to ${email}. Welcome to the #100for100 Champions!`);
+      showToast(`Hongera ${donorName}! Your gift of KES ${amount.toLocaleString()} (Ref: ${ref.toUpperCase()}) is confirmed. A confirmation has been sent to ${email}. Welcome to the #100for100 Champions!`);
 
       // Optimistically update counters on page
       const liveAmountEl = document.getElementById('liveAmountRaised');

@@ -44,7 +44,7 @@ Supporters can give directly through verified SO4MH accounts:
 
 | Channel | Method Details | Instructions / Notes |
 | :--- | :--- | :--- |
-| **M-PESA Paybill (Kenya)** | **Business No:** `891300`<br>**Account:** `148469`<br>**Name:** Stand Out 4 Mental Health | Instant Safaricom prompt; confirmation SMS serves as immediate receipt. |
+| **M-PESA Paybill (Kenya)** | **Business No:** `891300`<br>**Account:** `148469`<br>**Name:** Stand Out 4 Mental Health | Instant Safaricom prompt; Safaricom confirmation SMS serves as immediate payment confirmation. |
 | **Physical Equipment Drop & In-Kind** | Embakasi East Centre & Nairobi Hub | Coordinate therapy mats, sensory toys, and positioning aids via `info@standout4mentalhealth.org`. |
 | **Institutional & Corporate CSR** | Direct Partnership Desk | For corporate sponsorship agreements or matching funds, email: `info@standout4mentalhealth.org`. |
 
