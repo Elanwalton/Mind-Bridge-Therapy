@@ -434,7 +434,7 @@ window.openPledgeModal = function(itemName, unitPrice) {
 window.openConfirmModal = function(channelName) {
   const desc = document.getElementById('confirmModalDesc');
   if (desc) {
-    desc.textContent = `Please enter your ${channelName} transaction code and email so we can verify and issue your official tax receipt.`;
+    desc.textContent = `Please enter your ${channelName} transaction code and email so we can verify and issue your official receipt.`;
   }
   openModal('confirmModal');
 };
