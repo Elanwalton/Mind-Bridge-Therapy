@@ -504,19 +504,6 @@ window.handleConfirmSubmit = async function(e) {
       closeModal('confirmModal');
       showToast(`Hongera ${donorName}! Your gift of KES ${amount.toLocaleString()} (Ref: ${ref.toUpperCase()}) is confirmed. A confirmation has been sent to ${email}. Welcome to the #100for100 Champions!`);
 
-      // Optimistically update counters on page
-      const liveAmountEl = document.getElementById('liveAmountRaised');
-      const liveSupportersEl = document.getElementById('liveSupportersCount');
-
-      if (liveAmountEl) {
-        const current = parseInt(liveAmountEl.textContent.replace(/[^0-9]/g, ''), 10) || 170000;
-        liveAmountEl.textContent = `KES ${(current + amount).toLocaleString()}`;
-      }
-      if (liveSupportersEl) {
-        const current = parseInt(liveSupportersEl.textContent, 10) || 34;
-        liveSupportersEl.textContent = `${current + 1}`;
-      }
-
       e.target.reset();
     } else {
       showToast(`⚠️ ${data.message || 'Could not log your contribution. Please email info@standout4mentalhealth.org with your M-PESA reference.'}`);
