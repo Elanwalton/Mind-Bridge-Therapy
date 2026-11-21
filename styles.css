@@ -1161,6 +1161,10 @@ button {
 /* --------------------------------------------------------------------------
    Section 2: The 5 Bridges
    -------------------------------------------------------------------------- */
+.bridges-scroll-hint {
+  display: none;
+}
+
 .bridges-flow {
   display: flex;
   flex-direction: column;
@@ -3022,20 +3026,63 @@ button {
   }
   .manifesto-box { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
 
-  /* ── Section 2: The 5 Bridges (Intervention Model Stages) ── */
+  /* ── Section 2: The 5 Bridges (Horizontal Swipe/Scroll on Mobile) ── */
+  .bridges-scroll-hint {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--accent-amber);
+    margin-bottom: 0.65rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
   .bridges-flow {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 0.85rem !important;
+    padding-bottom: 0.85rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    gap: 1rem !important;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-amber) rgba(255, 255, 255, 0.05);
   }
+
+  .bridges-flow::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  .bridges-flow::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 9999px;
+  }
+
+  .bridges-flow::-webkit-scrollbar-thumb {
+    background: var(--accent-amber);
+    border-radius: 9999px;
+  }
+
   .bridge-block {
+    flex: 0 0 85% !important;
+    min-width: 85% !important;
+    max-width: 85% !important;
+    scroll-snap-align: start !important;
     grid-template-columns: 1fr !important;
-    gap: 0.85rem !important;
-    padding: 1.25rem 1rem !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    gap: 0.75rem !important;
+    padding: 1.25rem 1.15rem !important;
     box-sizing: border-box !important;
     margin: 0 !important;
+  }
+
+  .bridge-block:hover {
+    transform: none !important;
   }
   .bridge-number {
     width: fit-content !important;
@@ -3048,7 +3095,26 @@ button {
     flex-wrap: wrap !important;
     gap: 0.35rem 0.6rem !important;
   }
-  .media-highlight-grid { grid-template-columns: 1fr !important; gap: 1.25rem !important; }
+  .media-highlight-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    gap: 0.85rem !important;
+    padding-bottom: 0.5rem !important;
+    scrollbar-width: none;
+  }
+  .media-highlight-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .media-card {
+    flex: 0 0 85% !important;
+    min-width: 85% !important;
+    max-width: 85% !important;
+    scroll-snap-align: start !important;
+  }
 
   /* ── Section 3: #100for100 Campaign Dashboard & Benchmark Stages (Balanced Margins) ── */
   #campaign {
@@ -3239,12 +3305,22 @@ button {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
+    margin: 0 !important;
   }
   .channel-card {
     padding: 1.25rem 1rem !important;
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
+    margin: 0 !important;
+  }
+  .final-cta-buttons .btn-xl {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.9rem 1rem !important;
   }
   .payment-details-box {
     width: 100% !important;
