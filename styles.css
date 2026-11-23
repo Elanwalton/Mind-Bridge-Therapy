@@ -985,6 +985,143 @@ button {
   margin-bottom: 1.25rem;
 }
 
+/* -- Hero stat callouts for barrier cards -- */
+.card-hero-stat {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.02em;
+}
+
+.card-hero-stat .stat-unit {
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0.7;
+  letter-spacing: 0;
+}
+
+.text-amber { color: #F59E0B; }
+.text-blue { color: #3B82F6; }
+.text-green { color: #10B981; }
+
+/* -- Donut chart -- */
+.donut-chart-wrap {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.donut-chart {
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+}
+
+.donut-seg {
+  fill: none;
+  stroke-width: 28;
+}
+
+.donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  flex: 1;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.legend-label {
+  flex: 1;
+}
+
+.legend-val {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #fff;
+  font-size: 0.82rem;
+}
+
+/* -- M-PESA visual step flow -- */
+.mpesa-step-flow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  padding: 1rem 0.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.step-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  flex: 0 0 auto;
+}
+
+.step-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--border-subtle);
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: var(--transition);
+}
+
+.step-circle.active-step {
+  border-color: var(--accent-amber);
+  color: var(--accent-amber);
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.step-circle.done-step {
+  border-color: var(--accent-emerald);
+  color: var(--accent-emerald);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.step-text {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 90px;
+  line-height: 1.35;
+}
+
+.step-text strong {
+  color: #fff;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background: var(--border-subtle);
+  margin-top: 19px;
+  min-width: 16px;
+}
+
 .card-footer-metric {
   display: flex;
   justify-content: space-between;
@@ -1161,6 +1298,23 @@ button {
 /* --------------------------------------------------------------------------
    Section 2: The 5 Bridges
    -------------------------------------------------------------------------- */
+.bridge-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  flex-shrink: 0;
+}
+
+.bridge-icon-wrap.icon-amber { background: rgba(245, 158, 11, 0.12); color: #F59E0B; }
+.bridge-icon-wrap.icon-blue { background: rgba(59, 130, 246, 0.12); color: #3B82F6; }
+.bridge-icon-wrap.icon-green { background: rgba(16, 185, 129, 0.12); color: #10B981; }
+.bridge-icon-wrap.icon-pink { background: rgba(236, 72, 153, 0.12); color: #EC4899; }
+.bridge-icon-wrap.icon-purple { background: rgba(139, 92, 246, 0.12); color: #8B5CF6; }
+
 .bridges-scroll-hint {
   display: none;
 }
@@ -3407,6 +3561,58 @@ button {
   .share-btn-grid { grid-template-columns: 1fr !important; gap: 0.65rem !important; }
 
   /* ── Section 8: FAQ & Footer (Ultra-Compact) ── */
+
+  /* ── Donut chart stacks vertically on mobile ── */
+  .donut-chart-wrap {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.25rem !important;
+  }
+  .donut-chart {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .donut-legend {
+    width: 100% !important;
+  }
+
+  /* ── M-PESA step flow compact on mobile ── */
+  .mpesa-step-flow {
+    gap: 0 !important;
+    padding: 0.75rem 0.25rem !important;
+  }
+  .step-circle {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .step-circle svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  .step-text {
+    font-size: 0.6rem !important;
+    max-width: 70px !important;
+  }
+  .step-line {
+    margin-top: 16px !important;
+    min-width: 8px !important;
+  }
+
+  /* ── Hero stat sizing on mobile ── */
+  .card-hero-stat {
+    font-size: 1.75rem !important;
+  }
+
+  /* ── Bridge icons on mobile ── */
+  .bridge-icon-wrap {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .bridge-icon-wrap svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
   #faq.content-section {
     padding: 1.75rem 0 1.25rem !important;
   }
