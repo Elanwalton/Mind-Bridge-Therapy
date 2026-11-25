@@ -1364,6 +1364,90 @@ button {
   margin-bottom: 0.35rem;
 }
 
+/* -- Adoption Bridges (Adopt a Space) -- */
+.adoption-bridges {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 2rem;
+  margin-top: 2.5rem;
+}
+
+.adoption-label {
+  margin-bottom: 1.25rem;
+}
+
+.adoption-label p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  max-width: 38rem;
+}
+
+.adoption-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.adoption-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  transition: var(--transition);
+}
+
+.adoption-card:hover {
+  border-color: var(--border-light);
+}
+
+.adoption-card-featured {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: rgba(245, 158, 11, 0.04);
+}
+
+.adoption-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adoption-icon.icon-amber { background: rgba(245, 158, 11, 0.12); color: #F59E0B; }
+.adoption-icon.icon-green { background: rgba(16, 185, 129, 0.12); color: #10B981; }
+
+.adoption-amount {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.adoption-amount-featured {
+  color: var(--accent-amber);
+}
+
+.adoption-title {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.adoption-desc {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  flex: 1;
+}
+
 .bridge-title {
   font-family: var(--font-heading);
   font-size: 1.25rem;
@@ -3287,6 +3371,16 @@ button {
   .bridge-taglist {
     flex-wrap: wrap !important;
     gap: 0.35rem 0.6rem !important;
+  }
+  .adoption-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .adoption-card {
+    padding: 1.25rem !important;
+  }
+  .adoption-amount {
+    font-size: 1.5rem !important;
   }
   .media-highlight-grid {
     display: flex !important;
